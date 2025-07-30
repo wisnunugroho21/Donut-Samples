@@ -228,8 +228,7 @@ protected:
         {
             m_app.SetCrashType(CrashType::TIMEOUT);
         }
-        // d3d11 does not page fault in these conditions, so short circuit showing the button in d3d11
-        if (m_app.GetDevice()->getGraphicsAPI() != nvrhi::GraphicsAPI::D3D11 && ImGui::Button("Trigger page fault"))
+        if (ImGui::Button("Trigger page fault"))
         {
             m_app.SetCrashType(CrashType::PAGEFAULT);
         }

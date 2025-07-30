@@ -171,7 +171,6 @@ int main(int argc, const char** argv)
         if (strcmp(argv[i], "--help") == 0)
         {
             printf("Usage: %s [options]\n"
-                " -dx11            Use DX11 API\n"
                 " -dx12            Use DX12 API (default)\n"
                 " -vk              Use Vulkan API\n"
                 " --list-adapters  Enumerate the graphics adapters present in the system\n"

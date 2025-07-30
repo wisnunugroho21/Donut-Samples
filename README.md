@@ -55,7 +55,6 @@ Same as the [requirements for Donut](https://github.com/NVIDIA-RTX/Donut).
 Most examples support multiple graphics APIs (on Windows). They are built with all APIs supported in the same executable,
 and the API can be switched from the command line. Use these command line arguments:
 
-- `-dx11` for D3D11
 - `-dx12` for D3D12 (default)
 - `-vk` for Vulkan
 

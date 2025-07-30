@@ -184,15 +184,12 @@ private:
         const char* debugName, const void* data, uint64_t dataSize, bool isVertexBuffer, bool isInstanceBuffer)
     {
         nvrhi::BufferHandle bufHandle;
-
-        // The G-buffer fill pass accesses instance buffers as structured on DX12 and Vulkan, and as raw on DX11.
-        bool const needStructuredBuffer = isInstanceBuffer && device->getGraphicsAPI() != nvrhi::GraphicsAPI::D3D11;
         
         nvrhi::BufferDesc desc;
         desc.byteSize = dataSize;
         desc.isIndexBuffer = !isVertexBuffer && !isInstanceBuffer;
         desc.canHaveRawViews = isVertexBuffer || isInstanceBuffer;
-        desc.structStride = needStructuredBuffer ? sizeof(InstanceData) : 0;
+        desc.structStride = sizeof(InstanceData);
         desc.debugName = debugName;
         desc.initialState = nvrhi::ResourceStates::CopyDest;
         bufHandle = device->createBuffer(desc);

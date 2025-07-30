@@ -274,11 +274,6 @@ int main(int __argc, const char** __argv)
 #endif
 {
     nvrhi::GraphicsAPI api = app::GetGraphicsAPIFromCommandLine(__argc, __argv);
-    if (api == nvrhi::GraphicsAPI::D3D11)
-    {
-        log::error("The Bindless Rendering example does not support D3D11.");
-        return 1;
-    }
 
     app::DeviceManager* deviceManager = app::DeviceManager::Create(api);
 

@@ -506,11 +506,6 @@ int main(int __argc, const char** __argv)
 #endif
 {
     nvrhi::GraphicsAPI api = app::GetGraphicsAPIFromCommandLine(__argc, __argv);
-    if (api == nvrhi::GraphicsAPI::D3D11)
-    {
-        log::error("The Variable Rate Shading example does not support D3D11.");
-        return 1;
-    }
 
     // if d3d12 is selected and -raw flag is on, use raw d3d12 API path
     bool rawD3D12 = false;
